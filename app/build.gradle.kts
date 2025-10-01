@@ -9,21 +9,6 @@ plugins {
 }
 
 android {
-	signingConfigs {
-		getByName("debug") {
-			storeFile = file(gradleLocalProperties(rootDir, providers).getProperty("keystore.location"))
-			storePassword = gradleLocalProperties(rootDir, providers).getProperty("keystore.password")
-			keyPassword = gradleLocalProperties(rootDir, providers).getProperty("keystore.password")
-			keyAlias = gradleLocalProperties(rootDir, providers).getProperty("keystore.alias")
-		}
-		create("release") {
-			storeFile = file(gradleLocalProperties(rootDir, providers).getProperty("keystore.location"))
-			storePassword = gradleLocalProperties(rootDir, providers).getProperty("keystore.password")
-			keyPassword = gradleLocalProperties(rootDir, providers).getProperty("keystore.keypass")
-			keyAlias = gradleLocalProperties(rootDir, providers).getProperty("keystore.alias")
-
-		}
-	}
 	namespace = property.project.app.packageName
 	compileSdk = 35
 
